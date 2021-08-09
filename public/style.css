@@ -1,0 +1,207 @@
+/* Import typeface */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+
+/* Our default values set as CSS variables */
+:root {
+  --color-bg: #C37962;
+  --color-text-main: #FDFBF3;
+  --color-primary: #FDFBF3;
+  --wrapper-height: 85vh;
+  --image-max-width: 320px;
+  --font-family: "Inter";
+  --font-family-header: "Inter";
+}
+
+/* Basic page style resets */
+* {
+  font-size: 1em;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Page structure */
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  font-size: 12px;
+}
+.wrapper {
+  min-height: var(--wrapper-height);
+  place-items: center;
+  margin: 3rem 2rem 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Typography */
+p {
+  margin: 0 0 1rem 0;
+  line-height: 1.5 !important;
+  font-size: 1rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 2rem 0 0.8rem;
+  font-family: var(--font-family-header);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-text-main);
+}
+h1 {
+  margin-top: 1rem;
+  margin-bottom: 1.75rem;
+  font-size: 2rem;
+  display: inline-flex;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+h4 {
+  font-size: 1rem;
+}
+h5 {
+  font-size: 0.8rem;
+}
+small,
+.text_small {
+  font-size: 0.6rem;
+}
+ul > li,
+ol > li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+ul {
+  padding: 0 0 0 18px;
+  margin: 0;
+}
+ul.no-bullet {
+  list-style-type: none;
+}
+
+
+
+
+/* Layout: Home */
+.home {
+  justify-content: left;
+}
+/* Post */
+.post {
+  place-items: normal;
+}
+.postTitle {
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.49;
+  margin-bottom: 2rem;
+}
+.controls {
+  margin: 3rem 0 2rem;
+}
+
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* LES ORIGINAL button */
+.btn--remix {
+  font-family: var(--font-family);
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  line-height: 1rem;
+  font-weight: 600;
+  height: 2.75rem;
+  align-items: center;
+  cursor: pointer;
+  background: var(--color-bg);
+  border: 1px solid var(--color-primary);
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--color-primary);
+  white-space: nowrap;
+  margin-left: auto;
+}
+.btn--remix img {
+  margin-right: 0.5rem;
+}
+.btn--remix:hover {
+  background: #FFFFFF;
+  color: var(--color-bg);
+  border: 1px solid var(--color-primary);
+}
+
+/* Navigation grid */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto 0;
+  padding: 1rem 0 0.75rem 0;
+  width: 100%;
+  flex-wrap: wrap;
+  border-top: 4px solid #fff;
+}
+
+.footer a:not(.btn--remix):link,
+a:not(.btn--remix):visited {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.1rem;
+  color: #000;
+  text-decoration: none;
+  border-style: none;
+}
+
+.footer .links {
+  padding: 0.5rem 1rem 1.5rem;
+  white-space: nowrap;
+}
+
+.divider {
+  padding: 0 0.5rem;
+}
+
+.icon {
+  color: var(--color-text-main);
+}
+
+.h-4 {
+  height: 16px;
+}
+
+.w-4 {
+  width: 16px;
+}

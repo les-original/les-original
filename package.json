@@ -1,0 +1,32 @@
+{
+  "name": "myo-notions-lesoriginal",
+  "version": "0.0.1",
+  "description": "Free sewing notions, designed for 3D printing.",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "NODE_ENV=production eleventy"
+  },
+  "dependencies": {
+    "eleventy-plugin-seo": "^0.5.2",
+    "luxon": "^2.0.1"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-navigation": "^0.2.0"
+  },
+  "engines": {
+    "node": "12"
+  },
+  "repository": {
+    "url": "https://github.com/marcsist/marcsist"
+  },
+  "glitch": {
+    "projectType": "generated_static"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
