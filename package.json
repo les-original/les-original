@@ -4,7 +4,7 @@
   "description": "Free sewing notions, designed for 3D printing.",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "env NODE_ENV=production npx eleventy --pathprefix 'myo-notions-lesoriginal'"
+    "build": "NODE_ENV=production eleventy"
   },
   "dependencies": {
     "eleventy-plugin-seo": "^0.5.2",
