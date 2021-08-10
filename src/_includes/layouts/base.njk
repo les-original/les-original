@@ -5,39 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="/public/raster2.css">
-    <meta charset="utf-8" />
-    <link rel="icon" href="https://cdn.glitch.com/5b0ae0a2-f9fe-4b67-afd8-1bd45dda286c%2Ffavicon.png?v=1626385284528" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Free and open source 3D printable sewing notions" />
-    {% seo "" %}
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="utf-8" />
+  <link rel="icon" href="https://cdn.glitch.com/5b0ae0a2-f9fe-4b67-afd8-1bd45dda286c%2Ffavicon.png?v=1626385284528" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Free and open source 3D printable sewing notions" />
+  {% seo "" %}
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <style>
+    header a {
+      padding-bottom: 24px;
+      text-decoration: none;
+      font-size: var(--h5-size);
+    }
+    header{
+      padding-bottom: 2em;
+    }
+
+    a {
+      font-weight: 600;
+    }
+  </style>
   </head>
+  
+
   <body>
+    <header>
+      <r-grid columns=8 columns-s=4>
+        <r-cell span=5>
+          <a target="_top" href="https://lesoriginal.notion.site/LES-ORIGINAL-7e4c5a3d17e2429a836beedea3069562">LES ORIGINAL</a>
+          
+        </r-cell>
+        <r-cell span=1>
+<a href="/">Home</a>
+        </r-cell>
+        <r-cell span=1>
+          <a href="/notions">Notions</a>
+        </r-cell>
+        <r-cell span=1>
+          <a href="https://github.com/les-original/MYO-notions">GitHub</a>
+        </r-cell>
+      </r-grid>
+    </header>
   <main>
     
     {# Page or post content will appear here #}
   
     {{ content | safe }}
-
-      <footer class="footer">
-        <div class="links">
-          <a href="/">
-          Home
-          </a>
-          <span class="divider">|</span>
-          <a href="/notions">Notions</a>
-          <span class="divider">|</span>
-</svg>
-          <a href="https://github.com/les-original/MYO-notions">
-            GitHub
-          </a>
-        </div>
-        
-        <a class="btn--remix" target="_top" href="https://lesoriginal.notion.site/LES-ORIGINAL-7e4c5a3d17e2429a836beedea3069562">
-        <img style="width:16px; height:16px" src="https://cdn.glitch.com/5b0ae0a2-f9fe-4b67-afd8-1bd45dda286c%2Ffavicon.png?v=1626385284528" alt="" /> 
-        LES ORIGINAL
-        </a>
-      </footer>
     
   </main>
   </body>

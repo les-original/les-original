@@ -4,11 +4,11 @@ templateClass: tmpl-home
 ---
 
 {# This is the template for individual blog posts–it builds the front matter properties into the page #}
-<body>
-  <div class="wrapper post">
+
+<div class="wrapper post">
   <div>
     {# The post front matter includes the title property #}
-    <h1>{{title}}</h1>
+    <h1 class='postTitle'>{{title}}</h1>
 
     <p>
       <em>{{description}}</em>
@@ -32,4 +32,3 @@ templateClass: tmpl-home
     {% endif %}
   </div>
 </div>
-</body>
