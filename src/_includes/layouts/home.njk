@@ -4,20 +4,8 @@ templateClass: tmpl-home
 ---
 
 {# The Home page uses this template–it extends the base template #}
-
-<div class="wrapper home">
-  <head>
-<style>
-    .button {
-      margin-right: 16px;
-    }
-    a {
-      text-decoration: none;
-      font-weight: 600;
-    }
-  </style>
-</head>
 <body>
+<div class="wrapper home">
   <r-grid columns=8 columns-s=4>
     <r-cell span=2 span-s=row>
       <h1>MYO Notions</h1>
@@ -51,13 +39,15 @@ templateClass: tmpl-home
       Some content here
     </r-cell>
   </r-grid>
+  
+  </r-grid>
+  
 </body>
+
+
+
   <div class="content">
     {{ content | safe }}
-
-
-    
-    {# After the the content defined in index.md, list the blog posts in the collection #}
   </div>
 </div>
 
