@@ -4,7 +4,7 @@
   "description": "Free sewing notions, designed for 3D printing.",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "NODE_ENV=production eleventy"
+    "build": "env NODE_ENV=production npx eleventy --pathprefix 'myo-notions-lesoriginal'"
   },
   "dependencies": {
     "eleventy-plugin-seo": "^0.5.2",
@@ -18,7 +18,7 @@
     "node": "12"
   },
   "repository": {
-    "url": "https://github.com/marcsist/marcsist"
+    "url": "https://github.com/les-original/myo-notions-lesoriginal"
   },
   "glitch": {
     "projectType": "generated_static"
