@@ -1,14 +1,14 @@
 {
-  "name": "myo-notions-lesoriginal",
-  "version": "0.0.1",
-  "description": "Free sewing notions, designed for 3D printing.",
+  "name": "lesoriginal",
+  "version": "0.0.2",
+  "description": "Light goods and technical oddities.",
   "scripts": {
     "start": "eleventy --serve",
     "build": "NODE_ENV=production eleventy"
   },
   "dependencies": {
     "eleventy-plugin-seo": "^0.5.2",
-    "luxon": "^2.0.1"
+    "luxon": "^2.0.2"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
@@ -18,7 +18,7 @@
     "node": "12"
   },
   "repository": {
-    "url": "https://github.com/les-original/myo-notions-lesoriginal"
+    "url": "https://github.com/les-original/lesoriginal"
   },
   "glitch": {
     "projectType": "generated_static"

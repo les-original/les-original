@@ -1,7 +1,6 @@
 {
-  "glitch-help-instructions": "For a custom domain, change the 'url' parameter from 'glitch-default' to your domain _without_ a traling slash, like 'https://www.example.com'",
-  "title": "MYO Notions by LES ORIGINAL",
-  "description": "Free 3D printable sewing notions",
-  "url": "https://myo-notions.lesoriginal.com",
+  "title": "Les Original Tourist Equipment",
+  "description": "Light goods and technical oddities for freaks in nature",
+  "url": "https://www.lesoriginal.com",
   "image": "https://cdn.glitch.com/5b0ae0a2-f9fe-4b67-afd8-1bd45dda286c%2FPublication.png?v=1626506678849"
 }
