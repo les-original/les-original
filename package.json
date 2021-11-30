@@ -1,5 +1,5 @@
 {
-  "name": "lesoriginal",
+  "name": "les-original",
   "version": "0.0.2",
   "description": "Light goods and technical oddities.",
   "scripts": {
@@ -18,7 +18,7 @@
     "node": "12"
   },
   "repository": {
-    "url": "https://github.com/les-original/lesoriginal"
+    "url": "https://github.com/les-original/les-original"
   },
   "glitch": {
     "projectType": "generated_static"

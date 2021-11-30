@@ -4,7 +4,7 @@
 Making things you might be able to make yourself out in the open. Nothing for sale.
 
 # Projects
-## MYO-Notions
+### MYO-Notions
 
 Open source 3D printable sewing bits by [Les Original](https://www.lesoriginal.com).
 > They're optimized for 3D printing on FDM printers
