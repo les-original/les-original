@@ -1,5 +1,5 @@
 {
-  "name": "lesoriginal",
+  "name": "les-original",
   "version": "0.0.2",
   "description": "Light goods and technical oddities.",
   "scripts": {
@@ -8,17 +8,17 @@
   },
   "dependencies": {
     "eleventy-plugin-seo": "^0.5.2",
-    "luxon": "^2.0.2"
+    "luxon": "^2.2.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
-    "@11ty/eleventy-navigation": "^0.2.0"
+    "@11ty/eleventy-navigation": "^0.3.2"
   },
   "engines": {
     "node": "12"
   },
   "repository": {
-    "url": "https://github.com/les-original/lesoriginal"
+    "url": "https://github.com/les-original/les-original"
   },
   "glitch": {
     "projectType": "generated_static"
