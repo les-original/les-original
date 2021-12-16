@@ -4,56 +4,30 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="/public/raster2.css">
+  <link rel="stylesheet" href="/public/lesraster.css">
   <meta charset="utf-8" />
   <link rel="icon" href="https://cdn.glitch.com/5b0ae0a2-f9fe-4b67-afd8-1bd45dda286c%2Ffavicon.png?v=1626385284528" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Light goods and technical oddities for freaks in nature" />
   {% seo "" %}
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  <style>
-    header a {
-      padding-bottom: 24px;
-      text-decoration: none;
-      font-size: var(--h5-size);
-    }
-    header{
-      padding-bottom: 2em;
-    }
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PV3Z2HFSY5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-    a {
-      font-weight: 600;
-    }
-  </style>
+    gtag('config', 'G-PV3Z2HFSY5');
+  </script>
   </head>
   
-
   <body>
-    <header>
-      <r-grid columns=8 columns-s=4>
-        <r-cell span=5>
-          <a target="_top" href="../">Les Original™<br>Tourist Equipment</a>
-        </r-cell>
-        <r-cell span=1>
-          <a href="/">Home</a>
-        </r-cell>
-        <r-cell span=1>
-          <a href="/notions">Notions</a>
-        </r-cell>
-        <r-cell span=1>
-          <a href="https://github.com/les-original">GitHub</a>
-        </r-cell>
-      </r-grid>
-    </header>
-  <main>
-    
-    {# Page or post content will appear here #}
-  
-    {{ content | safe }}
-    
-  </main>
-      {% include 'layouts/blocks/footer.njk' %}
-
-    
+    <r-grid class="main" columns="6" columns-s="2">
+    {% include 'layouts/blocks/header.njk' %}
+      {{ content | safe }}
+      <hr>
+    {% include 'layouts/blocks/footer.njk' %}
+   </r-grid>   
   </body>
 </html>

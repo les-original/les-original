@@ -53,7 +53,7 @@ module.exports = function(eleventyConfig) {
   Adds {{ prevPost.url }} {{ prevPost.data.title }}, etc, to our njks templates
   */
   eleventyConfig.addCollection("posts", function(collection) {
-    const coll = collection.getFilteredByTag("posts");
+    const coll = collection.getFilteredByTag("notions");
 
     for (let i = 0; i < coll.length; i++) {
       const prevPost = coll[i - 1];

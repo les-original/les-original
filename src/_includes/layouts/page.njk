@@ -2,11 +2,14 @@
 layout: layouts/base.njk
 templateClass: tmpl-home
 ---
-
-{# The About page uses this template and you can customize / use it for any new pages you add #}
-
-<div class="wrapper">
-  <div class="content">
-    {{ content | safe }}
-  </div>
-</div>
+<r-cell span=row>
+    {% include 'layouts/blocks/breadcrumbs.njk' %}
+</r-cell>
+<r-cell span=row>
+    <h2 class="big">
+      {{description}}
+    </h2>
+</r-cell>
+<r-cell span=6 span-s=2>
+{{ content | safe }}
+</r-cell>  
