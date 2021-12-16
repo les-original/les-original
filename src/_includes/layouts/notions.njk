@@ -5,14 +5,12 @@ templateClass: tmpl-home
 <r-cell span=row>
     {% include 'layouts/blocks/breadcrumbs.njk' %}
 </r-cell>
-<r-cell span=5
+<r-cell span=row>
   <h2 class='postTitle big'>{{title}}</h2>
 <p>
   <em>{{description}}</em>
 </p>
-</r-cell>
   {{ content | safe }}
-
-<r-cell span=1>
-<a href="https://github.com/les-original/MYO-notions/discussions" style="text-decoration: underline; font-weight: 500;" class="small"> Give feedback</a> 
 </r-cell>
+<a href="https://github.com/les-original/MYO-notions/discussions" style="text-decoration: underline; font-weight: 500;" class="small"> Give feedback</a> 
+
