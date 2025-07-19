@@ -15,7 +15,7 @@
     "@11ty/eleventy-navigation": "^0.3.2"
   },
   "engines": {
-    "node": "12"
+    "node": "22.x"
   },
   "repository": {
     "url": "https://github.com/les-original/les-original"
