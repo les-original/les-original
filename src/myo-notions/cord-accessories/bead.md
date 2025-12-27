@@ -1,6 +1,7 @@
 ---
 title: bead
 icon: ↂ
+image: https://via.placeholder.com/400x300/7175C4/FDFBF3?text=bead
 description: Cylindrical beads for cord ends
 date: 2021-12-04
 tags:

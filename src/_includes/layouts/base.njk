@@ -45,6 +45,128 @@
       {{ content | safe }}
       <hr>
     {% include 'layouts/blocks/footer.njk' %}
-   </r-grid>   
+   </r-grid>
+   
+   <script>
+     // Theme toggle functionality
+     (function() {
+       const themeToggle = document.getElementById('theme-toggle');
+       const html = document.documentElement;
+       
+       // Get saved theme preference or default to 'system'
+       function getThemePreference() {
+         return localStorage.getItem('theme') || 'system';
+       }
+       
+       // Set theme based on preference
+       function setTheme(theme) {
+         // Remove all theme classes
+         html.classList.remove('theme-light', 'theme-dark', 'theme-system');
+         
+         if (theme === 'system') {
+           html.classList.add('theme-system');
+           // Remove data-theme to let CSS handle system preference
+           html.removeAttribute('data-theme');
+         } else {
+           html.classList.add('theme-' + theme);
+           html.setAttribute('data-theme', theme);
+         }
+         
+         // Update button icon visibility
+         updateThemeIcon(theme);
+       }
+       
+       // Update which icon is visible
+       function updateThemeIcon(theme) {
+         const icons = {
+           light: document.querySelector('.theme-icon-light'),
+           dark: document.querySelector('.theme-icon-dark'),
+           system: document.querySelector('.theme-icon-system')
+         };
+         
+         // Hide all icons
+         Object.values(icons).forEach(icon => {
+           if (icon) icon.style.display = 'none';
+         });
+         
+         // Show active icon
+         if (icons[theme]) {
+           icons[theme].style.display = 'block';
+         }
+       }
+       
+       // Cycle through themes: system -> light -> dark -> system
+       function cycleTheme() {
+         const current = getThemePreference();
+         let next;
+         
+         if (current === 'system') {
+           next = 'light';
+         } else if (current === 'light') {
+           next = 'dark';
+         } else {
+           next = 'system';
+         }
+         
+         localStorage.setItem('theme', next);
+         setTheme(next);
+       }
+       
+       // Initialize theme on page load
+       const savedTheme = getThemePreference();
+       setTheme(savedTheme);
+       
+       // Add click handler
+       if (themeToggle) {
+         themeToggle.addEventListener('click', cycleTheme);
+       }
+       
+       // Listen for system theme changes (only when in system mode)
+       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+       mediaQuery.addEventListener('change', function() {
+         if (getThemePreference() === 'system') {
+           // Force a re-render by toggling the class
+           html.classList.remove('theme-system');
+           setTimeout(() => html.classList.add('theme-system'), 0);
+         }
+       });
+     })();
+     
+     // Mobile menu toggle functionality
+     (function() {
+       const menuToggle = document.getElementById('mobile-menu-toggle');
+       const mainNav = document.getElementById('main-nav');
+       
+       if (menuToggle && mainNav) {
+         menuToggle.addEventListener('click', function() {
+           const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+           menuToggle.setAttribute('aria-expanded', !isExpanded);
+           mainNav.setAttribute('data-mobile-open', !isExpanded);
+         });
+         
+        // Close menu when clicking on a link or theme toggle (mobile only)
+        const navLinks = mainNav.querySelectorAll('.nav-link, .github-button, .theme-toggle');
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+              menuToggle.setAttribute('aria-expanded', 'false');
+              mainNav.setAttribute('data-mobile-open', 'false');
+            }
+          });
+        });
+         
+         // Close menu when clicking outside (mobile only)
+         document.addEventListener('click', function(event) {
+           if (window.innerWidth <= 768) {
+             const isClickInside = mainNav.contains(event.target) || menuToggle.contains(event.target);
+             if (!isClickInside && mainNav.getAttribute('data-mobile-open') === 'true') {
+               menuToggle.setAttribute('aria-expanded', 'false');
+               mainNav.setAttribute('data-mobile-open', 'false');
+             }
+           }
+         });
+       }
+     })();
+   </script>
   </body>
 </html>

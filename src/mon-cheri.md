@@ -1,6 +1,7 @@
 ---
 title: mon-cheri
 icon: 🍒
+image: https://via.placeholder.com/400x300/3D4195/FDFBF3?text=mon-cheri
 description: Cable crimps for FDM simps
 tags:
   - projects
@@ -30,6 +31,9 @@ layout: layouts/page.njk
     {%- for post in collections['cord accessories'] -%}
       <r-cell span=2 span-s=1 class="card">
         <a href="{{ post.url }}">
+          {%- if post.data.image -%}
+            <img src="{{ post.data.image }}" alt="{{ post.data.title }}" style="width: 100%; height: auto; margin-bottom: var(--les-padding-md); border-radius: var(--border-radius-sm);" />
+          {%- endif -%}
           {{ post.data.icon }}
           <p>
             {{ post.data.title }}
