@@ -21,6 +21,9 @@ layout: layouts/home.njk
     {%- for post in collections['projects'] -%}
       <r-cell span=2 span-s=1 class="card">
         <a href="{{ post.url }}">
+          {%- if post.data.image -%}
+            <img src="{{ post.data.image }}" alt="{{ post.data.title }}" style="width: 100%; height: auto; margin-bottom: var(--les-padding-md); border-radius: var(--border-radius-sm);" />
+          {%- endif -%}
           {{ post.data.icon }}
           <p>
             {{ post.data.title }}
