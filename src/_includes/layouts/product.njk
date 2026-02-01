@@ -1,0 +1,150 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-product
+---
+<r-cell span=row>
+    {% include 'layouts/blocks/breadcrumbs.njk' %}
+</r-cell>
+
+<r-cell span=row>
+    <h1>{{ title }}</h1>
+</r-cell>
+
+{# Main product layout: gallery on left, details on right #}
+<r-cell span=4 span-s=2 class="product-gallery-container">
+    {# Main image display #}
+    <div class="product-main-image" id="product-main-image">
+        {% set images = galleryPath | getProductImages %}
+        {% if images.length > 0 %}
+            {% set firstImage = images[0] %}
+            {% image firstImage, title + " - Main Image", "(max-width: 600px) 100vw, 60vw", [600, 1200] %}
+        {% elif image %}
+            <img src="{{ image }}" alt="{{ title }}">
+        {% else %}
+            <div class="product-image-placeholder">No image available</div>
+        {% endif %}
+    </div>
+
+    {# Thumbnail gallery #}
+    {% set images = galleryPath | getProductImages %}
+    {% if images.length > 1 %}
+    <div class="product-thumbnails" id="product-thumbnails">
+        {% for imgPath in images %}
+            <button class="product-thumb{% if loop.first %} active{% endif %}"
+                    data-index="{{ loop.index0 }}"
+                    data-image="{{ imgPath }}"
+                    aria-label="View image {{ loop.index }}">
+                {% image imgPath, title + " - Thumbnail " + loop.index, "100px", [100, 200] %}
+            </button>
+        {% endfor %}
+    </div>
+    {% endif %}
+</r-cell>
+
+{# Product details sidebar #}
+<r-cell span=2 span-s=2 class="product-details">
+    <div class="product-meta">
+        {% if icon %}<span class="product-icon">{{ icon }}</span>{% endif %}
+        <p class="product-description">{{ description }}</p>
+    </div>
+
+    {# Links section #}
+    {% if links %}
+    <div class="product-links">
+        <h3>Downloads & Links</h3>
+        <ul class="link-list">
+            {% for link in links %}
+            <li>
+                <a href="{{ link.url }}" class="button ghost" target="_blank" rel="noopener">
+                    {% if link.icon %}{{ link.icon }} {% endif %}{{ link.label }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {# Specs/details section #}
+    {% if specs %}
+    <div class="product-specs">
+        <h3>Specifications</h3>
+        <dl class="specs-list">
+            {% for spec in specs %}
+            <dt>{{ spec.label }}</dt>
+            <dd>{{ spec.value }}</dd>
+            {% endfor %}
+        </dl>
+    </div>
+    {% endif %}
+
+    {# Tags #}
+    {% if tags %}
+    <div class="product-tags">
+        {% for tag in tags %}
+            {% if tag != 'products' and tag != 'projects' %}
+            <span class="tag">{{ tag }}</span>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</r-cell>
+
+{# Additional content (markdown body) #}
+{% if content | trim | length > 0 %}
+<r-cell span=row class="product-content">
+    {{ content | safe }}
+</r-cell>
+{% endif %}
+
+{# Gallery image switching script #}
+<script>
+(function() {
+    const mainImage = document.getElementById('product-main-image');
+    const thumbnails = document.querySelectorAll('.product-thumb');
+
+    // Store all main images (preloaded)
+    const imageCache = {};
+
+    thumbnails.forEach((thumb, index) => {
+        thumb.addEventListener('click', function() {
+            // Update active state
+            thumbnails.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+
+            // Get the full-size picture element from the thumbnail
+            const thumbPicture = this.querySelector('picture, img');
+            if (thumbPicture) {
+                // Clone and replace main image
+                const imagePath = this.dataset.image;
+
+                // Fetch the optimized version via the picture element already in the page
+                // We'll use a simple approach: swap the main image src
+                const mainPicture = mainImage.querySelector('picture');
+                const mainImg = mainImage.querySelector('img');
+
+                if (mainImg && thumbPicture) {
+                    // Build the new src from the thumb's data
+                    const thumbImg = thumbPicture.querySelector ? thumbPicture.querySelector('img') : thumbPicture;
+                    if (thumbImg) {
+                        // Replace thumbnail size reference with larger size
+                        const newSrc = thumbImg.src.replace('-100w.', '-1200w.').replace('-200w.', '-1200w.');
+                        mainImg.src = newSrc;
+
+                        // Also update srcset if it exists
+                        const source = mainPicture ? mainPicture.querySelector('source') : null;
+                        if (source) {
+                            const thumbSource = thumbPicture.querySelector ? thumbPicture.querySelector('source') : null;
+                            if (thumbSource) {
+                                const newSrcset = thumbSource.srcset
+                                    .replace(/-100w\./g, '-600w.')
+                                    .replace(/-200w\./g, '-1200w.');
+                                source.srcset = newSrcset;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    });
+})();
+</script>
