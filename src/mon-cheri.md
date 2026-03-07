@@ -1,7 +1,9 @@
 ---
 title: mon-cheri
+tagline: "// cable crimps for FDM simps"
 icon: "🍒"
-description: Cable crimps for FDM simps.
+description: A precise printable hardware solution for cord termination and cable management in the field.
+status: Coming soon
 tags:
   - projects
   - 3D-printing
@@ -10,10 +12,9 @@ images:
 links:
   - label: Coming soon
     url: "#"
-    icon: "⏳"
 eleventyNavigation:
   key: mon-cheri
-  title: 🍒 mon-cheri
+  title: mon-cheri
   parent: Projects
   order: 2
 layout: layouts/product.njk

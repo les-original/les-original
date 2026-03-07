@@ -1,1 +1,14 @@
-{{ collections.all | eleventyNavigationBreadcrumb( eleventyNavigation.key ) | eleventyNavigationToHtml({ listClass:"breadcrumb small subtle", listItemClass:"breadcrumb", activeKey: "eleventyNavigation.key"}) | safe }}
+{% if eleventyNavigation and eleventyNavigation.key %}
+  {% set breadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) %}
+  {% if breadcrumbs.length > 0 %}
+  <div class="section-rule">
+    <span class="section-num"></span>
+    <nav class="section-label" aria-label="Breadcrumb">
+      {% for crumb in breadcrumbs %}
+        <a href="{{ crumb.url }}">{{ crumb.key | lower }}</a><span class="sep">/</span>
+      {% endfor %}
+      {{ eleventyNavigation.key | lower }}
+    </nav>
+  </div>
+  {% endif %}
+{% endif %}
