@@ -6,8 +6,7 @@ date: 2021-12-04
 tags:
   - notions
   - cord accessories
-images:
-  - https://via.placeholder.com/400x300/7175C4/FDFBF3?text=bead
+galleryPath: myo-notions/cord-accessories/bead/images
 links:
   - label: Download on Printables
     url: https://www.prusaprinters.org/prints/73004-myo-notions/files
