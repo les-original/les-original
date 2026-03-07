@@ -1,0 +1,77 @@
+---
+layout: layouts/base.njk
+---
+
+{# Breadcrumb #}
+{% include 'layouts/blocks/breadcrumbs.njk' %}
+
+{# Title band #}
+<div class="product-title-band">
+  <div class="product-title-row">
+    <h1 class="product-name">{{ title }}</h1>
+  </div>
+  {% if description %}
+  <p class="product-tagline">{{ description }}</p>
+  {% endif %}
+</div>
+
+{# Section rule #}
+<div class="section-rule">
+  <span class="section-num">001</span>
+  <span class="section-label">All projects</span>
+</div>
+
+{# Projects grid #}
+<section class="projects-section">
+  <div class="projects-grid">
+    {%- for post in collections['projects'] -%}
+    <article class="project-card">
+      <div class="project-meta-row">
+        <span class="project-index">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+        {% if post.data.status %}
+        <span class="project-status{% if post.data.status == 'coming-soon' or post.data.status == 'Coming soon' %} status-soon{% endif %}">
+          {{ post.data.status }}
+        </span>
+        {% endif %}
+      </div>
+      <a href="{{ post.url }}">
+        <div class="project-thumb">
+          {%- if post.data.galleryPath -%}
+            {%- set cardImages = post.data.galleryPath | getProductImages -%}
+            {%- if cardImages and cardImages.length > 0 -%}
+              {% image cardImages[0], post.data.title, "(max-width: 600px) 100vw, 50vw", [600] %}
+            {%- else -%}
+              <div class="project-thumb-placeholder">{{ post.data.icon or '—' }}</div>
+            {%- endif -%}
+          {%- elif post.data.image -%}
+            <img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy">
+          {%- elif post.data.images and post.data.images.length > 0 -%}
+            <img src="{{ post.data.images[0] }}" alt="{{ post.data.title }}" loading="lazy">
+          {%- else -%}
+            <div class="project-thumb-placeholder">{{ post.data.icon or '—' }}</div>
+          {%- endif -%}
+        </div>
+      </a>
+      <h2 class="project-name">
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </h2>
+      {% if post.data.tagline %}
+      <p class="project-tagline">{{ post.data.tagline }}</p>
+      {% endif %}
+      {% if post.data.description %}
+      <p class="project-desc">{{ post.data.description }}</p>
+      {% endif %}
+      {% if post.data.tags %}
+      <div class="project-tags">
+        {%- for tag in post.data.tags -%}
+          {%- if tag != 'projects' and tag != 'products' and tag != 'notions' -%}
+          <span class="p-tag">{{ tag }}</span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {% endif %}
+      <a href="{{ post.url }}" class="project-cta">View →</a>
+    </article>
+    {%- endfor -%}
+  </div>
+</section>
