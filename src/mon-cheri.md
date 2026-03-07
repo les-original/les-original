@@ -1,46 +1,20 @@
 ---
 title: mon-cheri
-icon: 🍒
-image: https://via.placeholder.com/400x300/3D4195/FDFBF3?text=mon-cheri
-description: Cable crimps for FDM simps
+icon: "🍒"
+description: Cable crimps for FDM simps.
 tags:
   - projects
   - 3D-printing
+images:
+  - https://media.printables.com/media/prints/40edf503-40bb-4f20-a254-11f774fccac7/images/10513588_83e8f060-6398-4622-91ed-6be5ec5b0901_1ba9233c-1fab-47f2-acfc-3ca71661ac06/thumbs/cover/320x240/jpeg/cc00a9ee-d7f8-4ecb-9d45-e7b83167e2f6_1_105_c.webp
+links:
+  - label: Coming soon
+    url: "#"
+    icon: "⏳"
 eleventyNavigation:
   key: mon-cheri
   title: 🍒 mon-cheri
   parent: Projects
   order: 2
-layout: layouts/page.njk
+layout: layouts/product.njk
 ---
- 
- <r-grid columns=6 columns-s=2>
-  <r-cell span=row>
-    <h2>
-      {{title}} ⚠ coming soon
-    </h2>
-  </r-cell>
-  <!--
-  <r-cell span=row>
-      <a href="https://github.com/les-original/MYO-Notions/archive/refs/tags/v2.0.zip">Download</a>
-      <a href="https://github.com/les-original/MYO-Notions">GitHub</a>
-    <h2>
-      MYO Notions
-    </h2>
-    </r-cell>
-    {%- for post in collections['cord accessories'] -%}
-      <r-cell span=2 span-s=1 class="card">
-        <a href="{{ post.url }}">
-          {%- if post.data.image -%}
-            <img src="{{ post.data.image }}" alt="{{ post.data.title }}" style="width: 100%; height: auto; margin-bottom: var(--les-padding-md); border-radius: var(--border-radius-sm);" />
-          {%- endif -%}
-          {{ post.data.icon }}
-          <p>
-            {{ post.data.title }}
-          </p>
-        </a>
-      </r-cell>
-           
-    {%- endfor -%}
--->
-  </r-grid> 

@@ -1,0 +1,135 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-product
+---
+<r-cell span=row>
+    {% include 'layouts/blocks/breadcrumbs.njk' %}
+</r-cell>
+
+<r-cell span=row>
+    <h1>{{ title }}</h1>
+</r-cell>
+
+{# Resolve image list: prefer local galleryPath, fall back to frontmatter images array #}
+{% set localImages = galleryPath | getProductImages %}
+{% if localImages.length > 0 %}
+    {% set allImages = localImages %}
+{% elif images %}
+    {% set allImages = images %}
+{% else %}
+    {% set allImages = [] %}
+{% endif %}
+
+{# Main product layout: gallery on left, details on right #}
+<r-cell span=4 span-s=2 class="product-gallery-container">
+    {# Main image display #}
+    <div class="product-main-image" id="product-main-image">
+        {% if allImages.length > 0 %}
+            {% image allImages[0], title + " - Main Image", "(max-width: 600px) 100vw, 60vw", [600, 1200] %}
+        {% elif image %}
+            <img src="{{ image }}" alt="{{ title }}">
+        {% else %}
+            <div class="product-image-placeholder">No image available</div>
+        {% endif %}
+    </div>
+
+    {# Thumbnail strip — only shown when there are multiple images #}
+    {% if allImages.length > 1 %}
+    <div class="product-thumbnails" id="product-thumbnails">
+        {% for imgPath in allImages %}
+            <button class="product-thumb{% if loop.first %} active{% endif %}"
+                    data-index="{{ loop.index0 }}"
+                    aria-label="View image {{ loop.index }}">
+                {% image imgPath, title + " - Thumbnail " + loop.index, "100px", [100, 200] %}
+            </button>
+        {% endfor %}
+    </div>
+    {% endif %}
+</r-cell>
+
+{# Product details sidebar #}
+<r-cell span=2 span-s=2 class="product-details">
+    <div class="product-meta">
+        {% if icon %}<span class="product-icon">{{ icon }}</span>{% endif %}
+        <p class="product-description">{{ description }}</p>
+    </div>
+
+    {# Links section #}
+    {% if links %}
+    <div class="product-links">
+        <h3>Downloads & Links</h3>
+        <ul class="link-list">
+            {% for link in links %}
+            <li>
+                <a href="{{ link.url }}" class="button ghost" target="_blank" rel="noopener">
+                    {% if link.icon %}{{ link.icon }} {% endif %}{{ link.label }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {# Specs/details section #}
+    {% if specs %}
+    <div class="product-specs">
+        <h3>Specifications</h3>
+        <dl class="specs-list">
+            {% for spec in specs %}
+            <dt>{{ spec.label }}</dt>
+            <dd>{{ spec.value }}</dd>
+            {% endfor %}
+        </dl>
+    </div>
+    {% endif %}
+
+    {# Tags #}
+    {% if tags %}
+    <div class="product-tags">
+        {% for tag in tags %}
+            {% if tag != 'products' and tag != 'projects' and tag != 'notions' %}
+            <span class="tag">{{ tag }}</span>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</r-cell>
+
+{# Additional content (markdown body) #}
+{% if content | trim | length > 0 %}
+<r-cell span=row class="product-content">
+    {{ content | safe }}
+</r-cell>
+{% endif %}
+
+{# Gallery image switching — swaps main image when a thumbnail is clicked #}
+{% if allImages.length > 1 %}
+<script>
+(function() {
+    const mainImage = document.getElementById('product-main-image');
+    const thumbButtons = document.querySelectorAll('.product-thumb');
+
+    thumbButtons.forEach(function(thumb) {
+        thumb.addEventListener('click', function() {
+            thumbButtons.forEach(function(t) { t.classList.remove('active'); });
+            this.classList.add('active');
+
+            const thumbImg = this.querySelector('img');
+            const thumbSource = this.querySelector('source');
+            const mainImg = mainImage.querySelector('img');
+            const mainSource = mainImage.querySelector('source');
+
+            if (mainImg && thumbImg) {
+                mainImg.src = thumbImg.src.replace(/-100w\./g, '-1200w.').replace(/-200w\./g, '-1200w.');
+                mainImg.srcset = '';
+            }
+            if (mainSource && thumbSource) {
+                mainSource.srcset = thumbSource.srcset
+                    .replace(/-100w\./g, '-600w.')
+                    .replace(/-200w\./g, '-1200w.');
+            }
+        });
+    });
+})();
+</script>
+{% endif %}
