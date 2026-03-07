@@ -1,40 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="/public/lesraster.css">
-  <meta name="description" content="{{ description or 'Light goods and technical oddities for freaks in nature' }}" />
-  {% seo "" %}
-  <link rel="icon" href="https://cdn.glitch.com/5b0ae0a2-f9fe-4b67-afd8-1bd45dda286c%2Ffavicon.png?v=1626385284528" />
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/public/lesraster.css">
+    <meta name="description" content="{{ description or 'Light goods and technical oddities for
+  freaks in nature' }}" />
+    {% seo "" %}
+    <link rel="icon" href="/public/favicon.png" />
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PV3Z2HFSY5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PV3Z2HFSY5');
-  </script>
-
-  <!-- Weglot -->
-  <link rel="alternate" hreflang="en" href="https://www.lesoriginal.com">
-  <link rel="alternate" hreflang="de" href="https://de.lesoriginal.com">
-  <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-  <script>
-    Weglot.initialize({ api_key: 'wg_7a655f8e1aaf451e6732a7e2d057c9d68' });
-  </script>
-
-  <!-- Vercel Analytics -->
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
-</head>
-<body>
-  {% include 'layouts/blocks/header.njk' %}
-  {{ content | safe }}
-  {% include 'layouts/blocks/footer.njk' %}
-</body>
-</html>
+    <!-- Vercel Analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body>
+    {% include 'layouts/blocks/header.njk' %}
+    {{ content | safe }}
+    {% include 'layouts/blocks/footer.njk' %}
+  </body>
+  </html>
