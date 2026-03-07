@@ -6,8 +6,7 @@ date: 2021-12-04
 tags:
   - notions
   - cord accessories
-images:
-  - https://media.printables.com/media/prints/73004/images/951286_663aded4-4b6e-434e-9004-a70b8df50a0d/thumbs/inside/1600x1200/png/orings-top-bkg.webp
+galleryPath: myo-notions/cord-accessories/o-ring/images
 links:
   - label: Download on Printables
     url: https://www.printables.com/model/48311-o-rings-152025mm-myo-notions

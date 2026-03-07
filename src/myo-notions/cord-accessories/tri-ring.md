@@ -6,8 +6,7 @@ date: 2021-05-15
 tags:
   - notions
   - cord accessories
-images:
-  - https://media.printables.com/media/prints/73004/images/951282_c456d7fc-d004-4305-a14e-501f861dba33/thumbs/inside/1600x1200/png/triring-top-bkg.webp
+galleryPath: myo-notions/cord-accessories/tri-ring/images
 links:
   - label: Download on Printables
     url: https://www.printables.com/model/54816-tri-rings-152025mm-myo-notions
