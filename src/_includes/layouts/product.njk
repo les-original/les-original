@@ -10,14 +10,22 @@ templateClass: tmpl-product
     <h1>{{ title }}</h1>
 </r-cell>
 
+{# Resolve image list: prefer local galleryPath, fall back to frontmatter images array #}
+{% set localImages = galleryPath | getProductImages %}
+{% if localImages.length > 0 %}
+    {% set allImages = localImages %}
+{% elif images %}
+    {% set allImages = images %}
+{% else %}
+    {% set allImages = [] %}
+{% endif %}
+
 {# Main product layout: gallery on left, details on right #}
 <r-cell span=4 span-s=2 class="product-gallery-container">
     {# Main image display #}
     <div class="product-main-image" id="product-main-image">
-        {% set images = galleryPath | getProductImages %}
-        {% if images.length > 0 %}
-            {% set firstImage = images[0] %}
-            {% image firstImage, title + " - Main Image", "(max-width: 600px) 100vw, 60vw", [600, 1200] %}
+        {% if allImages.length > 0 %}
+            {% image allImages[0], title + " - Main Image", "(max-width: 600px) 100vw, 60vw", [600, 1200] %}
         {% elif image %}
             <img src="{{ image }}" alt="{{ title }}">
         {% else %}
@@ -25,14 +33,12 @@ templateClass: tmpl-product
         {% endif %}
     </div>
 
-    {# Thumbnail gallery #}
-    {% set images = galleryPath | getProductImages %}
-    {% if images.length > 1 %}
+    {# Thumbnail strip — only shown when there are multiple images #}
+    {% if allImages.length > 1 %}
     <div class="product-thumbnails" id="product-thumbnails">
-        {% for imgPath in images %}
+        {% for imgPath in allImages %}
             <button class="product-thumb{% if loop.first %} active{% endif %}"
                     data-index="{{ loop.index0 }}"
-                    data-image="{{ imgPath }}"
                     aria-label="View image {{ loop.index }}">
                 {% image imgPath, title + " - Thumbnail " + loop.index, "100px", [100, 200] %}
             </button>
@@ -81,7 +87,7 @@ templateClass: tmpl-product
     {% if tags %}
     <div class="product-tags">
         {% for tag in tags %}
-            {% if tag != 'products' and tag != 'projects' %}
+            {% if tag != 'products' and tag != 'projects' and tag != 'notions' %}
             <span class="tag">{{ tag }}</span>
             {% endif %}
         {% endfor %}
@@ -96,55 +102,34 @@ templateClass: tmpl-product
 </r-cell>
 {% endif %}
 
-{# Gallery image switching script #}
+{# Gallery image switching — swaps main image when a thumbnail is clicked #}
+{% if allImages.length > 1 %}
 <script>
 (function() {
     const mainImage = document.getElementById('product-main-image');
-    const thumbnails = document.querySelectorAll('.product-thumb');
+    const thumbButtons = document.querySelectorAll('.product-thumb');
 
-    // Store all main images (preloaded)
-    const imageCache = {};
-
-    thumbnails.forEach((thumb, index) => {
+    thumbButtons.forEach(function(thumb) {
         thumb.addEventListener('click', function() {
-            // Update active state
-            thumbnails.forEach(t => t.classList.remove('active'));
+            thumbButtons.forEach(function(t) { t.classList.remove('active'); });
             this.classList.add('active');
 
-            // Get the full-size picture element from the thumbnail
-            const thumbPicture = this.querySelector('picture, img');
-            if (thumbPicture) {
-                // Clone and replace main image
-                const imagePath = this.dataset.image;
+            const thumbImg = this.querySelector('img');
+            const thumbSource = this.querySelector('source');
+            const mainImg = mainImage.querySelector('img');
+            const mainSource = mainImage.querySelector('source');
 
-                // Fetch the optimized version via the picture element already in the page
-                // We'll use a simple approach: swap the main image src
-                const mainPicture = mainImage.querySelector('picture');
-                const mainImg = mainImage.querySelector('img');
-
-                if (mainImg && thumbPicture) {
-                    // Build the new src from the thumb's data
-                    const thumbImg = thumbPicture.querySelector ? thumbPicture.querySelector('img') : thumbPicture;
-                    if (thumbImg) {
-                        // Replace thumbnail size reference with larger size
-                        const newSrc = thumbImg.src.replace('-100w.', '-1200w.').replace('-200w.', '-1200w.');
-                        mainImg.src = newSrc;
-
-                        // Also update srcset if it exists
-                        const source = mainPicture ? mainPicture.querySelector('source') : null;
-                        if (source) {
-                            const thumbSource = thumbPicture.querySelector ? thumbPicture.querySelector('source') : null;
-                            if (thumbSource) {
-                                const newSrcset = thumbSource.srcset
-                                    .replace(/-100w\./g, '-600w.')
-                                    .replace(/-200w\./g, '-1200w.');
-                                source.srcset = newSrcset;
-                            }
-                        }
-                    }
-                }
+            if (mainImg && thumbImg) {
+                mainImg.src = thumbImg.src.replace(/-100w\./g, '-1200w.').replace(/-200w\./g, '-1200w.');
+                mainImg.srcset = '';
+            }
+            if (mainSource && thumbSource) {
+                mainSource.srcset = thumbSource.srcset
+                    .replace(/-100w\./g, '-600w.')
+                    .replace(/-200w\./g, '-1200w.');
             }
         });
     });
 })();
 </script>
+{% endif %}

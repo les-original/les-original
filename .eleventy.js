@@ -7,36 +7,38 @@ const fs = require("fs");
 
 // Async shortcode for optimized images
 async function imageShortcode(src, alt, sizes = "100vw", widths = [400, 800, 1200]) {
+  if (!src) return '';
+
   // Handle both relative and absolute paths
   let inputPath = src;
   if (!path.isAbsolute(src) && !src.startsWith("http")) {
     inputPath = path.join("./src", src);
   }
 
-  let metadata = await Image(inputPath, {
-    widths: widths,
-    formats: ["webp", "jpeg"],
-    outputDir: "./build/img/",
-    urlPath: "/img/",
-    filenameFormat: function (id, src, width, format) {
-      const extension = path.extname(src);
-      const name = path.basename(src, extension);
-      return `${name}-${width}w.${format}`;
-    }
-  });
+  try {
+    let metadata = await Image(inputPath, {
+      widths: widths,
+      formats: ["webp", "jpeg"],
+      outputDir: "./build/img/",
+      urlPath: "/img/",
+      filenameFormat: function (id, src, width, format) {
+        const extension = path.extname(src);
+        const name = path.basename(src, extension);
+        return `${name}-${width}w.${format}`;
+      }
+    });
 
-  let imageAttributes = {
-    alt,
-    sizes,
-    loading: "lazy",
-    decoding: "async",
-  };
-
-  return Image.generateHTML(metadata, imageAttributes);
+    return Image.generateHTML(metadata, { alt, sizes, loading: "lazy", decoding: "async" });
+  } catch (e) {
+    // Fallback for blocked/unavailable remote images (works fine in production)
+    console.warn(`[image] Could not optimize ${src}, using original: ${e.message}`);
+    return `<img src="${src}" alt="${alt}" loading="lazy" decoding="async" style="max-width:100%;height:auto;">`;
+  }
 }
 
 // Sync function to get product gallery images from a folder
 function getProductImages(galleryPath) {
+  if (!galleryPath || typeof galleryPath !== 'string') return [];
   const fullPath = path.join("./src", galleryPath);
 
   if (!fs.existsSync(fullPath)) {
