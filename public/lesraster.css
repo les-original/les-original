@@ -179,7 +179,7 @@ r-cell  { display: block; }
 
 /* ── PROJECT CARDS ───────────────────────── */
 .projects-section {
-  padding: 0 40px 56px;
+  padding: 0 16px 56px;
 }
 
 .projects-grid {
@@ -189,12 +189,10 @@ r-cell  { display: block; }
 }
 
 .project-card {
-  border-right: 1px solid var(--gray5);
-  padding: 28px 24px 28px 0;
+  padding: 28px 24px;
 }
 
-.project-card:last-child { border-right: none; padding-right: 0; }
-.project-card:not(:first-child) { padding-left: 24px; }
+.project-card:not(:last-child) { border-right: 1px solid var(--gray5); }
 
 .project-meta-row {
   display: flex;
@@ -609,7 +607,7 @@ r-cell  { display: block; }
 
 /* ── NOTIONS LISTING ─────────────────────── */
 .notions-section {
-  padding: 0 40px 56px;
+  padding: 0 16px 56px;
 }
 
 .notions-grid {
@@ -620,12 +618,10 @@ r-cell  { display: block; }
 }
 
 .notion-card {
-  border-right: 1px solid var(--gray5);
-  padding: 24px 24px 24px 0;
+  padding: 24px;
 }
 
-.notion-card:last-child { border-right: none; padding-right: 0; }
-.notion-card:not(:first-child) { padding-left: 24px; }
+.notion-card:not(:last-child) { border-right: 1px solid var(--gray5); }
 
 .notion-thumb {
   position: relative;
