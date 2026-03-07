@@ -1,14 +1,33 @@
-<r-cell span=4 span-s=2>
-  {% include 'layouts/blocks/sign-up.njk' %}
-</r-cell>
-<r-cell span="2" span-s="2">
-  <div class="menu small">
-    <p>
-      Thanks for stopping by. Les Original is an open source experiment. We don't sell anything.
-    </p>
-    <a href="/">Home ⇧</a>
-    <a href="/projects/">Projects ⬒</a>
-    <a href="https://github.com/orgs/les-original/projects/2">Roadmap ↗</a>
-    <a href="https://github.com/les-original">GitHub ☆</a>
+<!-- Newsletter -->
+<section class="newsletter">
+  <div class="newsletter-left">
+    <h2 class="newsletter-headline">Learn to make do with Les.</h2>
+    <p class="newsletter-sub">Infrequent. Your info stays yours.</p>
   </div>
-</r-cell>
+  <form class="newsletter-form"
+        action="https://lesoriginal.us4.list-manage.com/subscribe/post?u=3c631df24fa50c1fecfd926c0&amp;id=cfbe963db9"
+        method="post"
+        target="_blank"
+        novalidate>
+    <input class="newsletter-input" type="email" name="EMAIL" placeholder="Email address" required>
+    <!-- Mailchimp bot trap -->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+      <input type="text" name="b_3c631df24fa50c1fecfd926c0_cfbe963db9" tabindex="-1" value="">
+    </div>
+    <button class="newsletter-btn" type="submit" name="subscribe">Subscribe</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-note">
+    Les Original™ — Open source experiment — We don't sell anything<br>
+    Made mostly by hand, wherever we happen to make things
+  </div>
+  <ul class="footer-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="https://github.com/orgs/les-original/projects/2" target="_blank" rel="noopener">Roadmap ↗</a></li>
+    <li><a href="https://github.com/les-original" target="_blank" rel="noopener">Github ↗</a></li>
+  </ul>
+</footer>

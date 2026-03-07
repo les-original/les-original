@@ -1,15 +1,23 @@
 ---
 layout: layouts/base.njk
-templateClass: tmpl-home
 ---
-<r-cell span=row>
-    {% include 'layouts/blocks/breadcrumbs.njk' %}
-</r-cell>
-<r-cell span=row>
-    <h2 class="big">
-      {{description}}
-    </h2>
-</r-cell>
-<r-cell span=6 span-s=2>
-{{ content | safe }}
-</r-cell>  
+
+{# Breadcrumb #}
+{% include 'layouts/blocks/breadcrumbs.njk' %}
+
+{# Title band (if title is set) #}
+{% if title %}
+<div class="product-title-band">
+  <div class="product-title-row">
+    <h1 class="product-name">{{ title }}</h1>
+  </div>
+  {% if description %}
+  <p class="product-tagline">{{ description }}</p>
+  {% endif %}
+</div>
+{% endif %}
+
+{# Content #}
+<div class="page-content">
+  {{ content | safe }}
+</div>
