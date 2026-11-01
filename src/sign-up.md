@@ -2,6 +2,7 @@
 title: Sign up for the mailing list
 icon: 📃
 description: Learn to Make Do
+excerpt: Join the Les Original mailing list for the occasional project update, announcement or tip on learning to make do. Your information is never shared.
 tags:
   - Other
 eleventyNavigation:

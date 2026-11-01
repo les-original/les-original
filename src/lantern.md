@@ -2,6 +2,7 @@
 title: lantern
 icon: "🌹"
 description: Turns a headlamp, bulb or flashlight into a lantern.
+excerpt: Lantern cover is an easy to make light diffuser for camp, sewn from a repurposed Calrose rice bag. Turns a headlamp, bulb or flashlight into a lantern.
 tags:
   - projects
   - softgoods
