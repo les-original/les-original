@@ -53,7 +53,11 @@ layout: layouts/base.njk
               <div class="notion-thumb-placeholder">{{ post.data.icon or '—' }}</div>
             {%- endif -%}
           {%- elif post.data.images and post.data.images.length > 0 -%}
+            {%- if post.data.images[0].startsWith('http') -%}
             <img src="{{ post.data.images[0] }}" alt="{{ post.data.title }}" loading="lazy">
+            {%- else -%}
+            {% image post.data.images[0], post.data.title, "(max-width: 600px) 100vw, 50vw", [600, 1200] %}
+            {%- endif -%}
           {%- else -%}
             <div class="notion-thumb-placeholder">{{ post.data.icon or '—' }}</div>
           {%- endif -%}
