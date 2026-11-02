@@ -5,4 +5,5 @@ eleventyNavigation:
   title: Home
   order: 1
 layout: layouts/home.njk
+ogtype: website
 ---

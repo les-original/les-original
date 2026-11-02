@@ -2,6 +2,7 @@
 title: bead
 icon: ↂ
 description: Cylindrical beads for cord ends
+excerpt: Printable cylindrical beads for finishing cord ends. Free open-source files for FDM printers, part of MYO-notions.
 date: 2021-12-04
 tags:
   - notions

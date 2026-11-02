@@ -135,15 +135,11 @@ module.exports = function(eleventyConfig) {
   
   /*
   From: https://github.com/artstorm/eleventy-plugin-seo
-  
-  Adds SEO settings to the top of all pages
-  The "glitch-default" bit allows someone to set the url in seo.json while
-  still letting it have a proper glitch.me address via PROJECT_DOMAIN
+
+  Adds SEO settings to the top of all pages. Site-wide values (canonical
+  domain, author, share image) live in src/_data/seo.json.
   */
-  const seo = require("./src/seo.json");
-  if (seo.url === "glitch-default") {
-    seo.url = `https://${process.env.PROJECT_DOMAIN}.glitch.me`;
-  }
+  const seo = require("./src/_data/seo.json");
   eleventyConfig.addPlugin(pluginSEO, seo);
 
   eleventyConfig.addFilter("htmlDateString", dateObj => {

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="/public/lesraster.css">
-    <meta name="description" content="{{ description or 'Light goods and technical oddities for
-  freaks in nature' }}" />
+    {# eleventy-plugin-seo reads "excerpt" for the meta description, so fall back to each page's own description #}
+    {% set excerpt = excerpt or description %}
     {% seo "" %}
     <link rel="icon" href="/public/favicon.png" />
 
