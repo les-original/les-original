@@ -62,12 +62,6 @@ Every shape comes in M3 and M4. M3 lets shapes run a bit smaller (lighter!) but 
 
 The [FreeCAD source](https://github.com/les-original/mon-cheri/blob/main/src/mon-cheri.FCStd) is there too. Most parameters drive the model, so you can loosen or tighten the fit for your screws or scale up a bigger size.
 
-<!-- TODO(Marcus): swap these placeholders for real photos of the heart and square (hex, bean, drop and squircle have none yet either). Drop the files in src/mon-cheri/images/ and add them to the "images" list in src/mon-cheri.md. -->
-<div class="photo-placeholders">
-<div class="photo-placeholder"><span class="photo-placeholder-label">heart</span><span class="photo-placeholder-note">photo coming</span></div>
-<div class="photo-placeholder"><span class="photo-placeholder-label">square</span><span class="photo-placeholder-note">photo coming</span></div>
-</div>
-
 ## Print and fit
 
 1. Print in a tough, outdoor-friendly filament like PETG.
