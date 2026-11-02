@@ -44,19 +44,19 @@ layout: layouts/product.njk
 
 ## Downloads
 
-Straight from the repo, always the latest files. Nine shapes, each in M3 and M4: 18 files.
+Straight from the repo, always the latest files. Nine shapes, each in M3 and M4: 18 files. Shape descriptions are below.
 
-| Style | Shape | M3 | M4 |
-|-------|-------|----|----|
-| **tri** | triangle | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-tri-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-tri-m4.stl) |
-| **ball** | ball | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-ball-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-ball-m4.stl) |
-| **barrel** | barrel | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-barrel-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-barrel-m4.stl) |
-| **square** | square | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-square-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-square-m4.stl) |
-| **heart** | heart | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-heart-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-heart-m4.stl) |
-| **hex** | hex | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-hex-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-hex-m4.stl) |
-| **bean** | bean | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-bean-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-bean-m4.stl) |
-| **drop** | drop | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-drop-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-drop-m4.stl) |
-| **squircle** | squircle | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-squircle-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-squircle-m4.stl) |
+| Shape | M3 | M4 |
+|-------|----|----|
+| **tri** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-tri-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-tri-m4.stl) |
+| **ball** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-ball-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-ball-m4.stl) |
+| **barrel** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-barrel-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-barrel-m4.stl) |
+| **square** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-square-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-square-m4.stl) |
+| **heart** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-heart-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-heart-m4.stl) |
+| **hex** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-hex-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-hex-m4.stl) |
+| **bean** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-bean-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-bean-m4.stl) |
+| **drop** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-drop-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-drop-m4.stl) |
+| **squircle** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-squircle-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-squircle-m4.stl) |
 
 The [FreeCAD source](https://github.com/les-original/mon-cheri/blob/main/src/mon-cheri.FCStd) is there too. Most parameters drive the model, so you can loosen or tighten the fit for your screws or scale up a bigger size.
 
