@@ -42,50 +42,31 @@ layout: layouts/product.njk
 
 `mon-cheri` are printed crimps that keep braided brake and shifter cable ends from fraying. They look neat, are easy to grip and come off when you need to adjust. Every shape fits typical bicycle cables.
 
-## Downloads
-
-Straight from the repo, always the latest files. Nine shapes, each in M3 and M4: 18 files. Shape descriptions are below.
-
-| Shape | M3 | M4 |
-|-------|----|----|
-| **tri** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-tri-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-tri-m4.stl) |
-| **ball** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-ball-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-ball-m4.stl) |
-| **barrel** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-barrel-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-barrel-m4.stl) |
-| **square** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-square-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-square-m4.stl) |
-| **heart** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-heart-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-heart-m4.stl) |
-| **hex** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-hex-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-hex-m4.stl) |
-| **bean** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-bean-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-bean-m4.stl) |
-| **drop** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-drop-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-drop-m4.stl) |
-| **squircle** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-squircle-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-squircle-m4.stl) |
-
-The [FreeCAD source](https://github.com/les-original/mon-cheri/blob/main/src/mon-cheri.FCStd) is there too. Most parameters drive the model, so you can loosen or tighten the fit for your screws or scale up a bigger size.
-
 ## Shapes
 
-- **tri** - a triangle
-- **ball** - a small round
-- **barrel** - a puck-shaped
-- **square** - a square
-- **heart** - a classic heart
-- **hex** - a six-sided nut-like shape
-- **bean** - a horizontal oval
-- **drop** - a teardrop with a blunt tip
-- **squircle** - a rounded square with a slight tilt
+Straight from the repo, always the latest files. Nine shapes, each in M3 and M4: 18 files, with the grub screw length that fits each.
+
+| Shape | M3 | M4 | M3 screw | M4 screw |
+|-------|----|----|----------|----------|
+| **tri** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-tri-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-tri-m4.stl) | 4 mm | 5 - 6 mm |
+| **ball** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-ball-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-ball-m4.stl) | 5 mm | 3.5 - 4 mm |
+| **barrel** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-barrel-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-barrel-m4.stl) | 5 mm | 3.5 - 4 mm |
+| **square** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-square-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-square-m4.stl) | 4 mm | 5 - 6 mm |
+| **heart** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-heart-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-heart-m4.stl) | 4 mm | 5 - 6 mm |
+| **hex** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-hex-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-hex-m4.stl) | 4 mm | 5 - 6 mm |
+| **bean** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-bean-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-bean-m4.stl) | 5 mm | 3.5 - 4 mm |
+| **drop** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-drop-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-drop-m4.stl) | 4 mm | 5 - 6 mm |
+| **squircle** | [M3 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-squircle-m3.stl) | [M4 .stl](https://github.com/les-original/mon-cheri/raw/main/mon-cheri-squircle-m4.stl) | 4 mm | 5 - 6 mm |
 
 Every shape comes in M3 and M4. M3 lets shapes run a bit smaller (lighter!) but the threads are delicate and the hex wrench size is *rare*. M4 is a more common wrench to carry and makes everything a bit more robust.
+
+The [FreeCAD source](https://github.com/les-original/mon-cheri/blob/main/src/mon-cheri.FCStd) is there too. Most parameters drive the model, so you can loosen or tighten the fit for your screws or scale up a bigger size.
 
 <!-- TODO(Marcus): swap these placeholders for real photos of the heart and square (hex, bean, drop and squircle have none yet either). Drop the files in src/mon-cheri/images/ and add them to the "images" list in src/mon-cheri.md. -->
 <div class="photo-placeholders">
 <div class="photo-placeholder"><span class="photo-placeholder-label">heart</span><span class="photo-placeholder-note">photo coming</span></div>
 <div class="photo-placeholder"><span class="photo-placeholder-label">square</span><span class="photo-placeholder-note">photo coming</span></div>
 </div>
-
-## Grub screw length
-
-| Style  | tri      | ball       | barrel     | heart    | square   | hex      | bean       | drop     | squircle |
-|--------|----------|------------|------------|----------|----------|----------|------------|----------|----------|
-| **M3** | 4 mm     | 5 mm       | 5 mm       | 4 mm     | 4 mm     | 4 mm     | 5 mm       | 4 mm     | 4 mm     |
-| **M4** | 5 - 6 mm | 3.5 - 4 mm | 3.5 - 4 mm | 5 - 6 mm | 5 - 6 mm | 5 - 6 mm | 3.5 - 4 mm | 5 - 6 mm | 5 - 6 mm |
 
 ## Print and fit
 
